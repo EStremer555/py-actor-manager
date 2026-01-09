@@ -1,4 +1,8 @@
 from dataclasses import dataclass
 
 
-# add dataclass here
+@dataclass
+class Actor(db.Model):
+    id: int
+    first_name: str
+    last_name: str
