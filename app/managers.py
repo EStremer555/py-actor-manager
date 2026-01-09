@@ -11,7 +11,9 @@ class ActorManager:
 
     def create(self, first_name: str, last_name: str):
         self.conn.execute(
-            f"INSERT INTO {self.table_name} (first_name, last_name) VALUES (?, ?)",
+            f"INSERT INTO {self.table_name} "
+            f"(first_name, last_name) "
+            f"VALUES (?, ?)",
             (first_name, last_name)
         )
 
@@ -23,7 +25,9 @@ class ActorManager:
 
     def update(self, pk: int, first_name: str, last_name: str):
         self.conn.execute(
-            f"UPDATE {self.table_name} SET first_name=?, last_name=? WHERE pk=?",
+            f"UPDATE {self.table_name} "
+            f"SET first_name=?, last_name=? "
+            f"WHERE pk=?",
             (first_name, last_name, pk)
         )
         self.conn.commit()
